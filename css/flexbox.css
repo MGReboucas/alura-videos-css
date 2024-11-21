@@ -1,0 +1,195 @@
+/* CABEÇALHO */
+.cabecalho__container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: fixed;
+     top: 0;
+}
+
+/* CABECALHO PESUISAR ITEM */
+.cabecalho__pesquisar__item {
+     display: none;
+}
+
+/* MENU CONTEINER */
+.menu__container {
+     position: fixed;
+     bottom: 0%;
+     height: 74px;
+     width: 100%;
+}
+
+/* MENU LISTA */
+.menu__lista {
+     display: flex;
+     justify-content: space-around;
+     height: 100%
+}
+
+/* APLICANDO ALIGN-SELF(SUBSTITUDO DO ALIGN-ITEMS, SO QUE NESSE CASO PARA FLEX) */
+.menu__lista li {
+     align-self: center;
+}
+
+/* MUDANÇAS NOS ITENS DO MENU */
+.menu__itens {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+}
+
+/* SELECIONANDO OS FILHOS DE MENU LISTA PODEMOS ESCONDER ELE
+NA APLICACAO COM DISPLAY NONE*/
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4) {
+     display: none;
+}
+
+/* SECÇÃO SUPERIOR CONTEINER */
+.superior__secao__container {
+     display: flex;
+     align-items: center;
+     white-space: nowrap;
+     overflow: scroll;
+     gap: 15px;
+}
+
+/* VIDEO CONTEINER */
+.videos__container {
+    display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
+}
+
+/* VIDEO ITEM*/
+.videos__item {
+     width: 303px;
+     height: 320px;
+     flex-grow: 1;
+}
+
+/* DESCRIÇÃO VIDEOS */
+.descricao-video {
+     margin-top: 1rem;
+     display: grid;
+     text-align: start;
+     column-gap: 1rem;
+     row-gap: 10px;
+     grid-template-columns: auto 1fr;
+}
+
+/* DESCRICAO VIDEO IMG */
+.descricao-video img {
+     grid-area: 1 / 1 / 3 / 2;
+}
+
+/* DESCRICAO VIDEO H3  */
+.descricao-video h3 {
+     grid-area: 1 / 2 / 2 / 3;
+     font-weight: 700;
+     color: #444444
+}
+
+/* DESCRICAO VIDEO P */
+.descricao-video p {
+     grid-area: 2 / 2 / 3 / 3;
+     font-size: 14px;
+     color: #444444;
+}
+
+/* RODAPE CONTEINER*/
+.rodape__container {
+     display: flex;
+     /*flex-direction: column;
+     flex-wrap: wrap;*/
+     flex-flow: column wrap;
+}
+
+/* RESPONSIVIDADE TABLET APLICADA QUANDO O MINIMO DE 834px*/
+@media(min-width: 834px) {
+
+     /* CABECALHO */
+     .cabecalho__pesquisar__item {
+          display: block;
+     }
+
+     /* MENU LATERAL */
+
+     /* MENU CONTEINER */
+     .menu__container {
+          left: 0;
+          height: auto;
+          width: 74px;
+          top: 80px;
+     }
+
+     /* MENU LISTA */
+     .menu__lista {
+          flex-direction: column;
+          justify-content: flex-start;
+          padding-top: 15px;
+          gap: 33px;
+     }
+
+     /* RODAPE */
+     .rodape__container {
+          justify-content: space-between;
+     }
+
+
+}
+
+/* RESPONSIVIDADE DESKTOP  APLICADA QUANDO O MINIMO DE LARGURA FOR DE 1440px*/
+@media(min-width: 1440px) {
+
+     /* MENU CONTEINER */
+     .menu__container {
+          width: 239px;
+          overflow: scroll;
+     }
+
+     /* IMPORTANDO OUTROS FILHOS DO MENU LISTA */
+     .menu__lista:nth-child(2),
+     .menu__lista:nth-child(3),
+     .menu__lista:nth-child(4) {
+          display: flex;
+
+     }
+
+     /* INVERTENDO A ORGANIZAÇÃO DE COLUNAS NA CLASSE FILHA 3 */
+     .menu__lista:nth-child(3) {
+          flex-direction: column-reverse;
+     }
+
+     /* MENU LISTA */
+     .menu__lista {
+          height: auto;
+          padding: 20px 17px 20px 15px;
+          gap: 15px;
+     }
+
+     /* MENU ITENS */
+     .menu__itens {
+          flex-direction: row;
+          align-items: center;
+          gap: 15px;
+     }
+
+     /* MODIFICANDO A ORDEM DO 4 MENU__LISTA */
+     /* .jogos{
+          order: 3;
+     }
+     .filmes{
+          order: 2;
+     }
+     .premium{
+          order: 1;
+     }
+     .maispagina{
+          order: 4;
+     } */
+
+
+}
